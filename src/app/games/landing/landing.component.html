@@ -1,0 +1,106 @@
+<!-- Features Games -->
+<section class="mb-24">
+    <h1 class="mb-6 text-2xl font-semibold">Featured Games</h1>
+
+    <swiper class="w-[calc(100vw-16rem)] bg-gray-900" [config]="swiperConfig">
+        <div class="swiper-wrapper">
+            <div
+                class="swiper-slide"
+                *ngFor="let game of gamesQuery['featuredGames']"
+            >
+                <div class="relative">
+                    <a [routerLink]="['/games', game.slug]">
+                        <img
+                            class="h-[75vh] w-full object-cover object-top"
+                            [src]="game.background_image"
+                            [alt]="game.name"
+                        />
+
+                        <div
+                            class="content absolute bottom-0 left-0 w-full translate-y-full transform-gpu bg-black bg-opacity-75 p-8 transition-transform delay-150 duration-300"
+                        >
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h1 class="mb-2 text-xl">
+                                        {{ game.name }}
+                                    </h1>
+                                    <div class="flex gap-2 text-gray-300">
+                                        <span
+                                            *ngFor="
+                                                let genre of game.genres
+                                                    | slice: 0:5
+                                            "
+                                            >{{ genre.name }}</span
+                                        >
+                                    </div>
+                                </div>
+
+                                <div class="flex gap-2">
+                                    <game-platform-icon
+                                        *ngFor="
+                                            let p of game.parent_platforms
+                                                | slice: 0:3
+                                        "
+                                        [platform]="p.platform"
+                                    ></game-platform-icon>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="swiper-pagination"></div>
+    </swiper>
+</section>
+
+<!-- Top Sellers -->
+<section class="mb-24">
+    <h1 class="mb-6 text-2xl font-semibold">Top Sellers</h1>
+
+    <div>
+        <game-carousel [games]="gamesQuery['topSellingGames']"></game-carousel>
+    </div>
+</section>
+
+<!-- New and Trending Games -->
+<section class="mb-24">
+    <h1 class="mb-6 text-2xl font-semibold">New and Trending</h1>
+
+    <div>
+        <game-carousel
+            [games]="gamesQuery['newAndTrendingGames']"
+        ></game-carousel>
+    </div>
+</section>
+
+<!-- Recently Updated -->
+<section class="mb-24">
+    <h1 class="mb-6 text-2xl font-semibold">Recently Updated</h1>
+
+    <div>
+        <game-carousel
+            [games]="gamesQuery['recentlyUpdatedGames']"
+        ></game-carousel>
+    </div>
+</section>
+
+<!-- Categories -->
+<section>
+    <h1 class="mb-6 text-2xl font-semibold">Categories</h1>
+    <div>
+        <nav>
+            <ul class="flex gap-12 px-4">
+                <li *ngFor="let category of categories">
+                    <a
+                        class="btn rounded-none px-12"
+                        [routerLink]="['/categories']"
+                        [fragment]="category"
+                        >{{ category | titlecase }}</a
+                    >
+                </li>
+            </ul>
+        </nav>
+    </div>
+</section>

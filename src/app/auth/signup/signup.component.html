@@ -1,0 +1,117 @@
+<h1 class="mb-12 text-2xl">Create An Account</h1>
+
+<form
+    class=""
+    #form="ngForm"
+    [formGroup]="signupForm"
+    (submit)="form.valid && handleSubmit()"
+>
+    <div class="mb-8">
+        <label for="name">Username</label>
+        <input
+            class="form-control"
+            type="text"
+            name="name"
+            id="name"
+            placeholder="John Brown"
+            [ngClass]="{
+                'bg-red-100':
+                    (form.submitted || username.dirty) && username.invalid
+            }"
+            formControlName="username"
+        />
+
+        <base-error
+            *ngIf="(form.submitted || username.dirty) && username.errors?.['required']"
+        >
+            Please enter a username
+        </base-error>
+    </div>
+
+    <div class="mb-8">
+        <label for="email">Email</label>
+        <input
+            class="form-control"
+            type="email"
+            name="email"
+            id="email"
+            placeholder="eg. john@email.com"
+            [ngClass]="{
+                'bg-red-100': (form.submitted || email.dirty) && email.invalid
+            }"
+            formControlName="email"
+        />
+
+        <base-error
+            *ngIf="(form.submitted || email.dirty) && email.errors?.['required']"
+        >
+            Please enter your email address
+        </base-error>
+        <base-error
+            *ngIf="(form.submitted || email.dirty) && email.errors?.['email']"
+        >
+            Email is not a valid email address
+        </base-error>
+        <base-error
+            *ngIf="(form.submitted || email.dirty) && email.errors?.['unique']"
+        >
+            Email is already in use
+        </base-error>
+    </div>
+
+    <div class="mb-8">
+        <label for="password">Password</label>
+        <input
+            class="form-control"
+            type="password"
+            name="password"
+            id="password"
+            placeholder="********"
+            [ngClass]="{
+                'bg-red-100':
+                    (form.submitted || password.dirty) && password.invalid
+            }"
+            formControlName="password"
+        />
+
+        <base-error
+            *ngIf="(form.submitted || password.dirty) && password.errors?.['required']"
+        >
+            Please enter your password
+        </base-error>
+    </div>
+
+    <div class="mb-8">
+        <label for="confirm">Confirm Password</label>
+        <input
+            class="form-control"
+            type="password"
+            name="confirm"
+            id="confirm"
+            placeholder="********"
+            [ngClass]="{
+                'bg-red-100':
+                    (form.submitted || confirm.dirty) && confirm.invalid
+            }"
+            formControlName="confirm"
+        />
+
+        <base-error
+            *ngIf="(form.submitted || confirm.dirty) && confirm.errors?.['required']"
+        >
+            Confirm your password
+        </base-error>
+        <base-error
+            *ngIf="(form.submitted || confirm.dirty) && confirm.errors?.['passwordMissing']"
+        >
+            Password is missing
+        </base-error>
+        <base-error
+            *ngIf="(form.submitted || confirm.dirty) && confirm.errors?.['confirm']"
+        >
+            Passwords do not match
+        </base-error>
+    </div>
+
+    <button class="btn" type="submit">Sign Up</button>
+</form>

@@ -1,0 +1,169 @@
+<!-- Banner -->
+<div class="relative mb-8">
+    <img
+        class="h-[33vh] w-full object-cover object-top"
+        [src]="game?.background_image"
+        [alt]="game?.name_original"
+    />
+
+    <!-- ESBR Rating -->
+    <!-- <div class="absolute bottom-4 right-4">ESBR Rating</div> -->
+</div>
+
+<div class="grid grid-cols-3 gap-8">
+    <div class="col-span-2">
+        <!-- Screenshots -->
+        <div class="mb-8" *ngIf="game?.screenshots?.length">
+            <h1 class="mb-6 text-xl">Screenshots</h1>
+
+            <swiper [config]="slideshowConfig">
+                <div class="swiper-wrapper">
+                    <div
+                        class="swiper-slide"
+                        *ngFor="
+                            let s of game!.screenshots | slice: 0:8;
+                            let i = index
+                        "
+                    >
+                        <img [src]="s.image" [alt]="'Screenshot-' + (i + 1)" />
+                    </div>
+                </div>
+
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+                <div class="swiper-pagination"></div>
+            </swiper>
+        </div>
+
+        <!-- Overview -->
+        <div class="mb-8">
+            <h1 class="mb-4 text-xl">Overview</h1>
+
+            <div class="overview-content" [innerHTML]="game?.description"></div>
+        </div>
+
+        <!-- Achievements -->
+        <div class="" *ngIf="game?.achievements?.length">
+            <h1 class="mb-6 text-xl">Achievements</h1>
+
+            <ul>
+                <li
+                    class="mb-4 bg-gray-900 p-2"
+                    *ngFor="let a of game?.achievements"
+                >
+                    <div class="flex gap-4">
+                        <img
+                            class="my-auto aspect-square h-16"
+                            [src]="a.image"
+                            [alt]="a.name"
+                        />
+
+                        <div class="relative flex-1">
+                            <h1 class="mb-2 text-xl">{{ a.name }}</h1>
+                            <p class="">{{ a.description }}</p>
+                            <span class="absolute top-1 right-1"
+                                >{{ a.percent }}%</span
+                            >
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Summary -->
+    <div class="">
+        <div class="sticky top-20 left-0 bg-neutral-900 p-4">
+            <!-- Title -->
+            <h1 class="mb-4 text-xl font-semibold">{{ game?.name }}</h1>
+
+            <!-- Genres -->
+            <div class="mb-6 flex flex-wrap gap-x-2">
+                <a
+                    class="bg-neutral-800 bg-opacity-75 py-1 px-2 text-sm"
+                    *ngFor="let genre of game?.genres | slice: 0:3"
+                    [routerLink]="['/browse']"
+                    [queryParams]="{ genres: genre.slug }"
+                    >{{ genre.name }}</a
+                >
+            </div>
+
+            <!-- Developers -->
+            <p class="mb-2" *ngIf="game?.developers?.length">
+                <span class="text-gray-300">Developer:</span>
+                {{ (game?.developers)![0].name }}
+            </p>
+
+            <!-- Release Date / Last Updated -->
+            <p class="">
+                <span class="text-gray-300"> Released:</span>
+                {{ game?.released | date }}
+            </p>
+            <p class="mb-4">
+                <span class="text-gray-300">Last Updated:</span>
+                {{ game?.updated | date }}
+            </p>
+
+            <!-- Download Count / Playtime -->
+            <p class="">
+                <span class="text-gray-300">Downloads:</span>
+                {{ game?.added | number }}
+            </p>
+            <p class="mb-4">
+                <span class="text-gray-300">Average Playtime:</span>
+                {{ game?.playtime }} hrs.
+            </p>
+
+            <!-- Platforms -->
+            <div class="mb-4 flex gap-x-2">
+                <game-platform-icon
+                    *ngFor="let p of game?.parent_platforms"
+                    [platform]="p.platform"
+                ></game-platform-icon>
+            </div>
+
+            <!-- Reviews Count / User Ratings -->
+            <div class="mb-4">
+                <game-ratings-stars
+                    [rating]="game?.rating"
+                ></game-ratings-stars>
+                <span>({{ game?.ratings_count | number }})</span>
+            </div>
+
+            <!-- CTAs -->
+            <div>
+                <details
+                    class="relative mb-2"
+                    *ngIf="game?.store_links?.length"
+                >
+                    <summary class="btn cursor-pointer">Get The Game</summary>
+
+                    <div class="absolute top-full left-0 w-max bg-black">
+                        <ul class="columns-2 gap-x-0">
+                            <li *ngFor="let s of game?.store_links">
+                                <a
+                                    class="inline-block w-full py-2 px-4 hover:bg-neutral-900"
+                                    [href]="s.url"
+                                    target="_blank"
+                                >
+                                    {{ getRelatedStore(s.store_id)?.name }}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </details>
+
+                <button class="underline" (click)="updateWishlist()">
+                    <i
+                        class="bx"
+                        [ngClass]="!inWishlist ? 'bx-heart' : 'bxs-heart'"
+                    ></i>
+                    <span>
+                        {{ !inWishlist ? "Add To" : "Remove From" }} Wishlist
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

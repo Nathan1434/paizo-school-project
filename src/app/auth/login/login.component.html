@@ -1,0 +1,68 @@
+<h1 class="mb-12 text-2xl">Login To Your Account</h1>
+
+<form
+    class=""
+    #form="ngForm"
+    [formGroup]="loginForm"
+    (submit)="form.valid && handleSubmit()"
+>
+    <div class="mb-8">
+        <label for="email">Email Address</label>
+        <input
+            class="form-control"
+            type="email"
+            name="email"
+            id="email"
+            placeholder="eg. john@email.com"
+            [ngClass]="{
+                'bg-red-100': (form.submitted || email.dirty) && email.invalid
+            }"
+            formControlName="email"
+        />
+
+        <base-error
+            *ngIf="(form.submitted || email.dirty) && email.errors?.['required']"
+        >
+            Please provide your email address
+        </base-error>
+        <base-error
+            *ngIf="(form.submitted || email.dirty) && email.errors?.['email']"
+        >
+            Email is not a valid email address
+        </base-error>
+        <base-error
+            *ngIf="(form.submitted || email.dirty) && email.errors?.['incorrect']"
+        >
+            Email address is incorrect
+        </base-error>
+    </div>
+
+    <div class="mb-8">
+        <label for="password">Password</label>
+        <input
+            class="form-control"
+            type="password"
+            name="password"
+            id="password"
+            placeholder="********"
+            [ngClass]="{
+                'bg-red-100':
+                    (form.submitted || password.dirty) && password.invalid
+            }"
+            formControlName="password"
+        />
+
+        <base-error
+            *ngIf="(form.submitted || password.dirty) && password.errors?.['required']"
+        >
+            Please enter your password
+        </base-error>
+        <base-error
+            *ngIf="(form.submitted || password.dirty) && password.errors?.['incorrect']"
+        >
+            Password is incorrect
+        </base-error>
+    </div>
+
+    <button class="btn" type="submit">Login</button>
+</form>

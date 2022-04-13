@@ -1,0 +1,3 @@
+swiper .swiper-slide-active .content {
+    transform: translateY(0%);
+}

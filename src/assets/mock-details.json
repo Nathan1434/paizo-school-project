@@ -1,0 +1,509 @@
+{
+    "id": 3328,
+    "slug": "the-witcher-3-wild-hunt",
+    "name": "The Witcher 3: Wild Hunt",
+    "name_original": "The Witcher 3: Wild Hunt",
+    "description": "<p>The third game in a series, it holds nothing back from the player. Open world adventures of the renowned monster slayer Geralt of Rivia are now even on a larger scale. Following the source material more accurately, this time Geralt is trying to find the child of the prophecy, Ciri while making a quick coin from various contracts on the side. Great attention to the world building above all creates an immersive story, where your decisions will shape the world around you.</p>\n<p>CD Project Red are infamous for the amount of work they put into their games, and it shows, because aside from classic third-person action RPG base game they provided 2 massive DLCs with unique questlines and 16 smaller DLCs, containing extra quests and items.</p>\n<p>Players praise the game for its atmosphere and a wide open world that finds the balance between fantasy elements and realistic and believable mechanics, and the game deserved numerous awards for every aspect of the game, from music to direction.</p>",
+    "metacritic": 92,
+    "metacritic_platforms": [
+        {
+            "metascore": 91,
+            "url": "https://www.metacritic.com/game/xbox-one/the-witcher-3-wild-hunt",
+            "platform": {
+                "platform": 1,
+                "name": "Xbox One",
+                "slug": "xbox-one"
+            }
+        },
+        {
+            "metascore": 93,
+            "url": "https://www.metacritic.com/game/pc/the-witcher-3-wild-hunt",
+            "platform": {
+                "platform": 4,
+                "name": "PC",
+                "slug": "pc"
+            }
+        },
+        {
+            "metascore": 92,
+            "url": "https://www.metacritic.com/game/playstation-4/the-witcher-3-wild-hunt",
+            "platform": {
+                "platform": 18,
+                "name": "PlayStation 4",
+                "slug": "playstation4"
+            }
+        }
+    ],
+    "released": "2015-05-18",
+    "tba": false,
+    "updated": "2022-01-02T10:49:58",
+    "background_image": "https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg",
+    "background_image_additional": "https://media.rawg.io/media/screenshots/3e4/3e4576a772b3df47bfc52b86e4cf7e03.jpg",
+    "website": "https://thewitcher.com/en/witcher3",
+    "rating": 4.67,
+    "rating_top": 5,
+    "ratings": [
+        {
+            "id": 5,
+            "title": "exceptional",
+            "count": 4039,
+            "percent": 77.96
+        },
+        {
+            "id": 4,
+            "title": "recommended",
+            "count": 808,
+            "percent": 15.6
+        },
+        {
+            "id": 3,
+            "title": "meh",
+            "count": 210,
+            "percent": 4.05
+        },
+        {
+            "id": 1,
+            "title": "skip",
+            "count": 124,
+            "percent": 2.39
+        }
+    ],
+    "reactions": {
+        "1": 49,
+        "2": 10,
+        "3": 47,
+        "4": 24,
+        "5": 13,
+        "6": 9,
+        "7": 13,
+        "10": 14,
+        "11": 16,
+        "12": 18,
+        "14": 1,
+        "15": 1,
+        "16": 2,
+        "21": 1
+    },
+    "added": 15698,
+    "added_by_status": {
+        "yet": 866,
+        "owned": 9121,
+        "beaten": 3654,
+        "toplay": 636,
+        "dropped": 678,
+        "playing": 743
+    },
+    "playtime": 48,
+    "screenshots_count": 107,
+    "movies_count": 0,
+    "creators_count": 34,
+    "achievements_count": 684,
+    "parent_achievements_count": 49,
+    "reddit_url": "https://www.reddit.com/r/thewitcher3/",
+    "reddit_name": "",
+    "reddit_description": "",
+    "reddit_logo": "",
+    "reddit_count": 8470,
+    "twitch_count": 102,
+    "youtube_count": 1000000,
+    "reviews_text_count": 75,
+    "ratings_count": 5106,
+    "suggestions_count": 678,
+    "alternative_names": [],
+    "metacritic_url": "https://www.metacritic.com/game/playstation-4/the-witcher-3-wild-hunt",
+    "parents_count": 0,
+    "additions_count": 3,
+    "game_series_count": 6,
+    "user_game": null,
+    "reviews_count": 5181,
+    "saturated_color": "0f0f0f",
+    "dominant_color": "0f0f0f",
+    "parent_platforms": [
+        {
+            "platform": {
+                "id": 1,
+                "name": "PC",
+                "slug": "pc"
+            }
+        },
+        {
+            "platform": {
+                "id": 2,
+                "name": "PlayStation",
+                "slug": "playstation"
+            }
+        },
+        {
+            "platform": {
+                "id": 3,
+                "name": "Xbox",
+                "slug": "xbox"
+            }
+        },
+        {
+            "platform": {
+                "id": 7,
+                "name": "Nintendo",
+                "slug": "nintendo"
+            }
+        }
+    ],
+    "platforms": [
+        {
+            "platform": {
+                "id": 7,
+                "name": "Nintendo Switch",
+                "slug": "nintendo-switch",
+                "image": null,
+                "year_end": null,
+                "year_start": null,
+                "games_count": 4743,
+                "image_background": "https://media.rawg.io/media/games/849/849414b978db37d4563ff9e4b0d3a787.jpg"
+            },
+            "released_at": "2015-05-18",
+            "requirements": {}
+        },
+        {
+            "platform": {
+                "id": 187,
+                "name": "PlayStation 5",
+                "slug": "playstation5",
+                "image": null,
+                "year_end": null,
+                "year_start": 2020,
+                "games_count": 496,
+                "image_background": "https://media.rawg.io/media/games/f24/f2493ea338fe7bd3c7d73750a85a0959.jpeg"
+            },
+            "released_at": "2015-05-18",
+            "requirements": {}
+        },
+        {
+            "platform": {
+                "id": 186,
+                "name": "Xbox Series S/X",
+                "slug": "xbox-series-x",
+                "image": null,
+                "year_end": null,
+                "year_start": 2020,
+                "games_count": 429,
+                "image_background": "https://media.rawg.io/media/games/3a8/3a82d7f5c90ab082fe475e28d58bee8b.jpg"
+            },
+            "released_at": "2015-05-18",
+            "requirements": {}
+        },
+        {
+            "platform": {
+                "id": 1,
+                "name": "Xbox One",
+                "slug": "xbox-one",
+                "image": null,
+                "year_end": null,
+                "year_start": null,
+                "games_count": 5206,
+                "image_background": "https://media.rawg.io/media/games/c24/c24ec439abf4a2e92f3429dfa83f7f94.jpg"
+            },
+            "released_at": "2015-05-18",
+            "requirements": {}
+        },
+        {
+            "platform": {
+                "id": 4,
+                "name": "PC",
+                "slug": "pc",
+                "image": null,
+                "year_end": null,
+                "year_start": null,
+                "games_count": 425544,
+                "image_background": "https://media.rawg.io/media/games/ad2/ad2ffdf80ba993654f31da045bc02456.jpg"
+            },
+            "released_at": "2015-05-18",
+            "requirements": {}
+        },
+        {
+            "platform": {
+                "id": 18,
+                "name": "PlayStation 4",
+                "slug": "playstation4",
+                "image": null,
+                "year_end": null,
+                "year_start": null,
+                "games_count": 6280,
+                "image_background": "https://media.rawg.io/media/games/bc0/bc06a29ceac58652b684deefe7d56099.jpg"
+            },
+            "released_at": "2015-05-18",
+            "requirements": {}
+        }
+    ],
+    "stores": [
+        {
+            "id": 354780,
+            "url": "",
+            "store": {
+                "id": 5,
+                "name": "GOG",
+                "slug": "gog",
+                "domain": "gog.com",
+                "games_count": 4056,
+                "image_background": "https://media.rawg.io/media/games/9fa/9fa63622543e5d4f6d99aa9d73b043de.jpg"
+            }
+        },
+        {
+            "id": 3565,
+            "url": "",
+            "store": {
+                "id": 3,
+                "name": "PlayStation Store",
+                "slug": "playstation-store",
+                "domain": "store.playstation.com",
+                "games_count": 7742,
+                "image_background": "https://media.rawg.io/media/games/4be/4be6a6ad0364751a96229c56bf69be59.jpg"
+            }
+        },
+        {
+            "id": 305376,
+            "url": "",
+            "store": {
+                "id": 1,
+                "name": "Steam",
+                "slug": "steam",
+                "domain": "store.steampowered.com",
+                "games_count": 61394,
+                "image_background": "https://media.rawg.io/media/games/c4b/c4b0cab189e73432de3a250d8cf1c84e.jpg"
+            }
+        },
+        {
+            "id": 312313,
+            "url": "",
+            "store": {
+                "id": 2,
+                "name": "Xbox Store",
+                "slug": "xbox-store",
+                "domain": "microsoft.com",
+                "games_count": 4712,
+                "image_background": "https://media.rawg.io/media/games/960/960b601d9541cec776c5fa42a00bf6c4.jpg"
+            }
+        },
+        {
+            "id": 676022,
+            "url": "",
+            "store": {
+                "id": 6,
+                "name": "Nintendo Store",
+                "slug": "nintendo",
+                "domain": "nintendo.com",
+                "games_count": 8820,
+                "image_background": "https://media.rawg.io/media/games/8d6/8d69eb6c32ed6acfd75f82d532144993.jpg"
+            }
+        }
+    ],
+    "developers": [
+        {
+            "id": 9023,
+            "name": "CD PROJEKT RED",
+            "slug": "cd-projekt-red",
+            "games_count": 18,
+            "image_background": "https://media.rawg.io/media/games/ee3/ee3e10193aafc3230ba1cae426967d10.jpg"
+        }
+    ],
+    "genres": [
+        {
+            "id": 4,
+            "name": "Action",
+            "slug": "action",
+            "games_count": 145004,
+            "image_background": "https://media.rawg.io/media/games/f87/f87457e8347484033cb34cde6101d08d.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Adventure",
+            "slug": "adventure",
+            "games_count": 109077,
+            "image_background": "https://media.rawg.io/media/games/b72/b7233d5d5b1e75e86bb860ccc7aeca85.jpg"
+        },
+        {
+            "id": 5,
+            "name": "RPG",
+            "slug": "role-playing-games-rpg",
+            "games_count": 44550,
+            "image_background": "https://media.rawg.io/media/games/4be/4be6a6ad0364751a96229c56bf69be59.jpg"
+        }
+    ],
+    "tags": [
+        {
+            "id": 31,
+            "name": "Singleplayer",
+            "slug": "singleplayer",
+            "language": "eng",
+            "games_count": 155961,
+            "image_background": "https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg"
+        },
+        {
+            "id": 13,
+            "name": "Atmospheric",
+            "slug": "atmospheric",
+            "language": "eng",
+            "games_count": 20401,
+            "image_background": "https://media.rawg.io/media/games/d82/d82990b9c67ba0d2d09d4e6fa88885a7.jpg"
+        },
+        {
+            "id": 40836,
+            "name": "Full controller support",
+            "slug": "full-controller-support",
+            "language": "eng",
+            "games_count": 11697,
+            "image_background": "https://media.rawg.io/media/games/5c0/5c0dd63002cb23f804aab327d40ef119.jpg"
+        },
+        {
+            "id": 42,
+            "name": "Great Soundtrack",
+            "slug": "great-soundtrack",
+            "language": "eng",
+            "games_count": 3198,
+            "image_background": "https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg"
+        },
+        {
+            "id": 24,
+            "name": "RPG",
+            "slug": "rpg",
+            "language": "eng",
+            "games_count": 14002,
+            "image_background": "https://media.rawg.io/media/games/d1a/d1a2e99ade53494c6330a0ed945fe823.jpg"
+        },
+        {
+            "id": 118,
+            "name": "Story Rich",
+            "slug": "story-rich",
+            "language": "eng",
+            "games_count": 13803,
+            "image_background": "https://media.rawg.io/media/games/ad2/ad2ffdf80ba993654f31da045bc02456.jpg"
+        },
+        {
+            "id": 36,
+            "name": "Open World",
+            "slug": "open-world",
+            "language": "eng",
+            "games_count": 4878,
+            "image_background": "https://media.rawg.io/media/games/b45/b45575f34285f2c4479c9a5f719d972e.jpg"
+        },
+        {
+            "id": 149,
+            "name": "Third Person",
+            "slug": "third-person",
+            "language": "eng",
+            "games_count": 6531,
+            "image_background": "https://media.rawg.io/media/games/4be/4be6a6ad0364751a96229c56bf69be59.jpg"
+        },
+        {
+            "id": 64,
+            "name": "Fantasy",
+            "slug": "fantasy",
+            "language": "eng",
+            "games_count": 18332,
+            "image_background": "https://media.rawg.io/media/games/d4b/d4bcd78873edd9992d93aff9cc8db0c8.jpg"
+        },
+        {
+            "id": 37,
+            "name": "Sandbox",
+            "slug": "sandbox",
+            "language": "eng",
+            "games_count": 4638,
+            "image_background": "https://media.rawg.io/media/games/14a/14a83c56ff668baaced6e8c8704b6391.jpg"
+        },
+        {
+            "id": 97,
+            "name": "Action RPG",
+            "slug": "action-rpg",
+            "language": "eng",
+            "games_count": 4460,
+            "image_background": "https://media.rawg.io/media/games/3cf/3cff89996570cf29a10eb9cd967dcf73.jpg"
+        },
+        {
+            "id": 41,
+            "name": "Dark",
+            "slug": "dark",
+            "language": "eng",
+            "games_count": 10130,
+            "image_background": "https://media.rawg.io/media/games/ebd/ebdbb7eb52bd58b0e7fa4538d9757b60.jpg"
+        },
+        {
+            "id": 44,
+            "name": "Nudity",
+            "slug": "nudity",
+            "language": "eng",
+            "games_count": 3560,
+            "image_background": "https://media.rawg.io/media/games/67f/67f62d1f062a6164f57575e0604ee9f6.jpg"
+        },
+        {
+            "id": 336,
+            "name": "controller support",
+            "slug": "controller-support",
+            "language": "eng",
+            "games_count": 293,
+            "image_background": "https://media.rawg.io/media/games/ebd/ebdbb7eb52bd58b0e7fa4538d9757b60.jpg"
+        },
+        {
+            "id": 192,
+            "name": "Mature",
+            "slug": "mature",
+            "language": "eng",
+            "games_count": 1347,
+            "image_background": "https://media.rawg.io/media/games/29c/29c6c21cc0c78cff6f45d23631cc82f4.jpg"
+        },
+        {
+            "id": 145,
+            "name": "Choices Matter",
+            "slug": "choices-matter",
+            "language": "eng",
+            "games_count": 2064,
+            "image_background": "https://media.rawg.io/media/games/efd/efd6b2cb621c41a2b6580d8ac260b8ba.jpg"
+        },
+        {
+            "id": 40,
+            "name": "Dark Fantasy",
+            "slug": "dark-fantasy",
+            "language": "eng",
+            "games_count": 2274,
+            "image_background": "https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg"
+        },
+        {
+            "id": 66,
+            "name": "Medieval",
+            "slug": "medieval",
+            "language": "eng",
+            "games_count": 3916,
+            "image_background": "https://media.rawg.io/media/games/511/5116b4524cea34c6b3f12e0ca027d850.jpg"
+        },
+        {
+            "id": 82,
+            "name": "Magic",
+            "slug": "magic",
+            "language": "eng",
+            "games_count": 6283,
+            "image_background": "https://media.rawg.io/media/games/417/4176298c1b22ccd338ce3dfc34eb7e28.jpg"
+        },
+        {
+            "id": 218,
+            "name": "Multiple Endings",
+            "slug": "multiple-endings",
+            "language": "eng",
+            "games_count": 4832,
+            "image_background": "https://media.rawg.io/media/games/7e7/7e79e3296a7f64e7535c9e5bb5aa4b53.jpg"
+        }
+    ],
+    "publishers": [
+        {
+            "id": 7411,
+            "name": "CD PROJEKT RED",
+            "slug": "cd-projekt-red",
+            "games_count": 17,
+            "image_background": "https://media.rawg.io/media/games/b51/b51c3649322ac0de9dfbe83435eda449.jpg"
+        }
+    ],
+    "esrb_rating": {
+        "id": 4,
+        "name": "Mature",
+        "slug": "mature"
+    },
+    "clip": null,
+    "description_raw": "The third game in a series, it holds nothing back from the player. Open world adventures of the renowned monster slayer Geralt of Rivia are now even on a larger scale. Following the source material more accurately, this time Geralt is trying to find the child of the prophecy, Ciri while making a quick coin from various contracts on the side. Great attention to the world building above all creates an immersive story, where your decisions will shape the world around you.\n\nCD Project Red are infamous for the amount of work they put into their games, and it shows, because aside from classic third-person action RPG base game they provided 2 massive DLCs with unique questlines and 16 smaller DLCs, containing extra quests and items.\n\nPlayers praise the game for its atmosphere and a wide open world that finds the balance between fantasy elements and realistic and believable mechanics, and the game deserved numerous awards for every aspect of the game, from music to direction."
+}

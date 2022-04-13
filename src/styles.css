@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .form-control {
+        @apply form-input mt-1 block w-max rounded border-none bg-gray-200 text-black;
+    }
+
+    .btn {
+        @apply block w-max transform-gpu rounded bg-blue-500 py-3 px-6 text-white transition-all hover:scale-105 hover:bg-blue-400;
+    }
+}
+
+:root {
+    --theme-bg-color: #0c0b16;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    appearance: none;
+}
+
+.overview-content p {
+    margin-bottom: 1rem;
+}

@@ -1,0 +1,33 @@
+<swiper [config]="swiperConfig">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide" *ngFor="let game of games">
+            <a [routerLink]="['/games', game.slug]">
+                <div
+                    class="group relative overflow-hidden"
+                    *ngIf="game.short_screenshots?.length"
+                >
+                    <img
+                        class="h-52 w-full object-cover"
+                        [src]="game.short_screenshots![0].image"
+                        [alt]="game.name"
+                    />
+
+                    <div
+                        class="content absolute inset-0 opacity-0 transition-opacity group-hover:opacity-100"
+                    >
+                        <div
+                            class="grid h-full place-items-center bg-black bg-opacity-50"
+                        >
+                            <h1 class="px-2 text-center text-lg">
+                                {{ game.name }}
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+</swiper>

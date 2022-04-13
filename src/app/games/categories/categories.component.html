@@ -1,0 +1,63 @@
+<h1 class="mb-8 text-2xl font-semibold">Categories</h1>
+
+<div class="mb-16" id="platform" *ngIf="categories.platforms$">
+    <h2 class="mb-4 text-lg">Platforms</h2>
+
+    <ul class="flex gap-12 pl-4">
+        <li *ngFor="let p of categories.platforms$ | async">
+            <a
+                class="hover:underline"
+                [routerLink]="['/browse']"
+                [queryParams]="{ platforms: p.slug }"
+                >{{ p.name }}</a
+            >
+        </li>
+    </ul>
+</div>
+
+<div class="mb-16" id="genre" *ngIf="categories.genres$">
+    <h2 class="mb-4 text-lg">Genres</h2>
+
+    <ul class="columns-4 pl-4 leading-loose">
+        <li *ngFor="let g of categories.genres$ | async">
+            <a
+                class="hover:underline"
+                [routerLink]="['/browse']"
+                [queryParams]="{ genre: g.slug }"
+                >{{ g.name }}</a
+            >
+        </li>
+    </ul>
+</div>
+
+<div class="mb-16" id="tag" *ngIf="categories.tags$">
+    <h2 class="mb-4 text-lg">Tags</h2>
+
+    <ul class="columns-4 pl-4 leading-loose">
+        <li *ngFor="let t of categories.tags$ | async">
+            <a
+                class="hover:underline"
+                [routerLink]="['/browse']"
+                [queryParams]="{ tag: t.slug }"
+            >
+                {{ t.name | titlecase }}
+            </a>
+        </li>
+    </ul>
+</div>
+
+<div class="mb-16" id="developer" *ngIf="categories.developers$">
+    <h2 class="mb-4 text-lg">Developers</h2>
+
+    <ul class="columns-4 pl-4 leading-loose">
+        <li *ngFor="let d of categories.developers$ | async">
+            <a
+                class="hover:underline"
+                [routerLink]="['/browse']"
+                [queryParams]="{ developer: d.slug }"
+            >
+                {{ d.name | titlecase }}
+            </a>
+        </li>
+    </ul>
+</div>

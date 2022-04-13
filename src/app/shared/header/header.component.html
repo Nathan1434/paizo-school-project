@@ -1,0 +1,80 @@
+<header class="sticky top-0 left-0 z-10 w-full bg-gray-900">
+    <div class="container flex items-center justify-between">
+        <a routerLink="/" class="font-logo text-lg font-semibold"
+            >Paízo&trade;</a
+        >
+
+        <nav>
+            <ul class="flex">
+                <li>
+                    <a
+                        class="inline-block px-4 py-4 hover:-mb-[2px] hover:border-b-2 hover:border-gray-400"
+                        [routerLinkActive]="[
+                            'border-white',
+                            'border-b-2',
+                            '-mb-[2px]'
+                        ]"
+                        routerLink="/discover"
+                        >Discover
+                    </a>
+                </li>
+                <li>
+                    <a
+                        class="inline-block px-4 py-4 hover:-mb-[2px] hover:border-b-2 hover:border-gray-400"
+                        [routerLinkActive]="[
+                            'border-white',
+                            'border-b-2',
+                            '-mb-[2px]'
+                        ]"
+                        routerLink="/browse"
+                        >Browse
+                    </a>
+                </li>
+                <li>
+                    <a
+                        class="inline-block px-4 py-4 hover:-mb-[2px] hover:border-b-2 hover:border-gray-400"
+                        [routerLinkActive]="[
+                            'border-white',
+                            'border-b-2',
+                            '-mb-[2px]'
+                        ]"
+                        routerLink="/categories"
+                    >
+                        Categories
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <nav [ngSwitch]="isLoggedIn">
+            <ul class="flex gap-4" *ngSwitchCase="false">
+                <li><a routerLink="/login">Login</a></li>
+                <li><a routerLink="/signup">Signup</a></li>
+            </ul>
+
+            <ul class="flex gap-4" *ngSwitchCase="true">
+                <li>
+                    <a routerLink="/wishlist">
+                        My Wishlist
+                        <i
+                            class="bx"
+                            [ngClass]="
+                                !wishlistLength ? 'bx-heart' : 'bxs-heart'
+                            "
+                        ></i>
+                        <sup [ngClass]="{ invisible: !wishlistLength }">
+                            {{ wishlistLength }}
+                        </sup>
+                    </a>
+                </li>
+
+                <li>
+                    <button class="ml-2" (click)="logUserOut()">
+                        Logout
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>

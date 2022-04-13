@@ -1,0 +1,244 @@
+<div class="grid grid-cols-[max-content,_1fr]">
+    <!-- Filters -->
+    <aside class="h-max border-r border-gray-600 py-8 pr-6">
+        <!-- Searchbar -->
+        <div class="mb-6 border-b border-gray-600 pb-6">
+            <h1 class="mb-2 text-lg">Search</h1>
+            <form
+                class="flex w-full items-center overflow-hidden rounded-full bg-white text-black"
+            >
+                <label class="cursor-text pl-4" for="search">
+                    <i class="fa-solid fa-search"></i>
+                </label>
+                <input
+                    class="flex-1 border-0 bg-transparent outline-0 focus:ring-transparent"
+                    type="search"
+                    name="search"
+                    id="search"
+                    placeholder="Search for any game"
+                    ngModel
+                    (ngModelChange)="onSearch($event)"
+                />
+            </form>
+        </div>
+
+        <div class="mb-6">
+            <h1 class="mb-2 text-lg">Platform</h1>
+            <ul class="ml-2">
+                <li *ngFor="let platform of filterOptions['platforms']">
+                    <label [for]="platform.slug">
+                        <input
+                            type="checkbox"
+                            name="platform"
+                            [id]="platform.slug"
+                            [(ngModel)]="platform.checked"
+                            (ngModelChange)="setFilters()"
+                        />
+                        {{ platform.name }}
+                    </label>
+                </li>
+            </ul>
+        </div>
+
+        <div class="mb-6">
+            <h1 class="mb-2 text-lg">Genre</h1>
+            <ul class="ml-2">
+                <li *ngFor="let genre of filterOptions['genres']">
+                    <label [for]="genre.slug">
+                        <input
+                            type="checkbox"
+                            name="genre"
+                            [id]="genre.slug"
+                            [(ngModel)]="genre.checked"
+                            (ngModelChange)="setFilters()"
+                        />
+                        {{ genre.name }}
+                    </label>
+                </li>
+            </ul>
+        </div>
+
+        <div class="mb-6">
+            <h1 class="mb-2 text-lg">Tags</h1>
+            <select
+                class="w-[25ch] text-black"
+                name="tag"
+                id="tag"
+                ngModel
+                (ngModelChange)="setFieldFilter('tags', $event)"
+            >
+                <option value="" [selected]="!selectedTag" disabled hidden>
+                    - Select a tag -
+                </option>
+                <option
+                    *ngFor="let t of filterOptions['tags']"
+                    [value]="t.id"
+                    [selected]="t === selectedTag"
+                >
+                    {{ t.name | titlecase }}
+                </option>
+            </select>
+        </div>
+
+        <div class="mb-6">
+            <h1 class="mb-2 text-lg">Developers</h1>
+            <select
+                class="w-[25ch] text-black"
+                name="developer"
+                id="developer"
+                ngModel
+                (ngModelChange)="setFieldFilter('developers', $event)"
+            >
+                <option
+                    value=""
+                    [selected]="!selectedDeveloper"
+                    disabled
+                    hidden
+                >
+                    - Select a developer -
+                </option>
+                <option
+                    *ngFor="let d of filterOptions['developers']"
+                    [value]="d.id"
+                    [selected]="d === selectedDeveloper"
+                >
+                    {{ d.name | titlecase }}
+                </option>
+            </select>
+        </div>
+
+        <div>
+            <button class="btn" (click)="clearFilters()">Clear Filters</button>
+        </div>
+    </aside>
+
+    <div class="pl-6">
+        <h1 class="mb-8 text-2xl font-semibold">All Games</h1>
+
+        <div *ngIf="!loading && allGames.length">
+            <!-- Games List -->
+            <div class="grid grid-cols-3 gap-8">
+                <div
+                    class="group relative transform-gpu transition-transform hover:scale-105"
+                    *ngFor="let game of allGames"
+                >
+                    <img
+                        class="h-56 w-full object-cover"
+                        [src]="game.short_screenshots![0]?.image"
+                        [alt]="game.name"
+                    />
+
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-75 p-4 opacity-0 transition-opacity group-hover:opacity-100"
+                    >
+                        <div class="flex h-full flex-col gap-y-2">
+                            <!-- Title -->
+                            <h1 class="text-lg leading-tight">
+                                {{ game.name }}
+                            </h1>
+
+                            <!-- Tags -->
+                            <div class="flex flex-wrap gap-x-2">
+                                <a
+                                    class="bg-neutral-800 bg-opacity-75 py-1 px-2 text-xs"
+                                    *ngFor="
+                                        let genre of game.genres | slice: 0:3
+                                    "
+                                    [routerLink]="['/browse']"
+                                    [queryParams]="{ genres: genre.slug }"
+                                    >{{ genre.name }}</a
+                                >
+                            </div>
+
+                            <!-- Platform -->
+                            <div class="flex gap-2">
+                                <game-platform-icon
+                                    *ngFor="
+                                        let p of game.parent_platforms
+                                            | slice: 0:3
+                                    "
+                                    [platform]="p.platform"
+                                ></game-platform-icon>
+                            </div>
+
+                            <!-- CTAs -->
+                            <div class="mt-auto flex items-center gap-4">
+                                <a
+                                    class="btn rounded-none py-2 px-4"
+                                    [routerLink]="['/games', game.slug]"
+                                    >View Details</a
+                                >
+                                <button (click)="updateWishlist(game)">
+                                    <i
+                                        class="bx text-2xl"
+                                        [ngClass]="
+                                            gameIsInWishlist(game)
+                                                ? 'bxs-heart'
+                                                : 'bx-heart'
+                                        "
+                                    ></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="mt-12 flex justify-between" *ngIf="!loading">
+                <div>
+                    Showing {{ skip.start | number }} -
+                    {{ skip.end | number }} of
+                    {{ numOfResults | number }} results
+                </div>
+
+                <nav>
+                    <ul class="flex gap-4 text-lg">
+                        <li>
+                            <button
+                                [ngClass]="{ invisible: currentPage === 1 }"
+                                (click)="changePage(currentPage - 1)"
+                            >
+                                <i class="fa-solid fa-arrow-left"></i>
+                            </button>
+                        </li>
+                        <li
+                            *ngFor="
+                                let num of pages | slice: 0:pageNumberLimit;
+                                let i = index
+                            "
+                        >
+                            <button (click)="changePage(i + 1)">
+                                {{ i + 1 }}
+                            </button>
+                        </li>
+                        <li *ngIf="numOfPages > pageNumberLimit">...</li>
+                        <li *ngIf="numOfPages > pageNumberLimit">
+                            <button (click)="changePage(numOfPages)">
+                                {{ numOfPages | number }}
+                            </button>
+                        </li>
+                        <li>
+                            <button
+                                [ngClass]="{
+                                    invisible: currentPage === numOfPages
+                                }"
+                                (click)="changePage(currentPage + 1)"
+                            >
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Loading Spinner -->
+        <app-loading-spinner *ngIf="loading"></app-loading-spinner>
+
+        <!-- No Results -->
+        <div *ngIf="!loading && !allGames.length">
+            <h1 class="text-3xl">No Results Found</h1>
+        </div>
+    </div>
+</div>
